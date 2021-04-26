@@ -1,0 +1,16 @@
+<div class="rows">
+    <div *ngFor="let result of videos">
+        <mat-card class="card">
+            <a href="{{ result.videoUrl }}" target='_blank' class="btn btn-default" role="button">
+                <img src="{{ result.thumbnailUrl }}" />
+            </a>
+            <h4>{{ result.title }}</h4>
+            <p>{{ result.description }}</p>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="bookmark(result)">
+          Bookmark it!
+        </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

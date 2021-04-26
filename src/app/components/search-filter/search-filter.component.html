@@ -1,0 +1,20 @@
+<form [formGroup]="formFilter">
+<mat-form-field appearance="outline">
+  <mat-label>Order:</mat-label>
+  <mat-select formControlName="order" (selectionChange)="selectedOrder($event)">
+    <mat-option *ngFor="let order of eSortOrder | keyvalue" [value]="order.value">{{order.value}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Duration:</mat-label>
+  <mat-select formControlName="duration" (selectionChange)="selectedDuration($event)">
+    <mat-option *ngFor="let duration of eSortDuration | keyvalue" [value]="duration.value">{{duration.value}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Max Results:</mat-label>
+  <mat-select formControlName="maxResults" (selectionChange)="selectedMaxResults($event)">
+    <mat-option *ngFor="let maxResults of eSortMaxResults | keyvalue" [value]="maxResults.value">{{maxResults.value}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</form>

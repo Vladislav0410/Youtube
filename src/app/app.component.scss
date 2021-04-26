@@ -1,0 +1,31 @@
+.body {
+  overflow: hidden;
+  height: 100%;
+}
+.material-icons {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.page-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.main {
+  position: relative;
+  top: 70px;
+  margin-left: 20px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.content {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.selected {
+  border: 3px black solid;
+}

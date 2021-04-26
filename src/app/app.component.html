@@ -1,0 +1,52 @@
+  <div class="page-header">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span>Youtube Search</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+
+  <div class="main">
+    <div>
+      <div title="Search" class="search">
+        <div
+          class="material-icons"
+          [class.selected]="!tab"
+          (click)="selectPage('search')"
+        >
+          cloud
+        </div>
+      </div>
+      <div title="Favorites" class="bookmark">
+        <div
+          class="material-icons"
+          [class.selected]="tab"
+          (click)="selectPage('bookmark')"
+        >
+        <span class="material-icons">
+          video_library
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div *ngIf="!tab">
+        <app-search-video
+          (searchKeyword)="updateSearch($event)"
+        ></app-search-video>
+        <app-search-filter
+          *ngIf="searchKeyword"
+          (searchOrder)="updateOrder($event)"
+          (searchDuration)="updateDuration($event)"
+          (searchMaxResults)="updateMaxResults($event)"
+        ></app-search-filter>
+        <app-search-result
+          [query]="searchKeyword"
+          [order]="searchOrder"
+          [duration]="searchDuration"
+          [maxResults]="searchMaxResults"
+        ></app-search-result>
+      </div>
+      <app-bookmark *ngIf="tab"></app-bookmark>
+    </div>
+  </div>
